@@ -1,0 +1,24 @@
+.title h1 {
+    text-align: center;
+    font-family: monospace;
+    margin-top: 8%;
+    padding-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-bottom: 4px solid #04545584; 
+    background: linear-gradient(90deg, #202c2f, transparent); 
+    background-size: 200% 100%; 
+    background-clip: text; 
+    color: #027a7c8c; 
+    animation: moveBorder 3s linear infinite; 
+  }
+  
+  @keyframes moveBorder {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col col-12">
+      <div class="img-container">
+        <div class="img-area" *ngFor="let image of images">
+          <img class="imagen" [src]="image.url" alt="Image" />
+          <div class="img-text">
+            <h6 class="card-title">{{ image.title }}</h6>
+            <p class="card-text">{{ image.description }}</p>
+            <div class="img-icon">
+              <i class="fa-solid fa-share-nodes"></i>
+              <i class="fa-solid fa-comments"></i>
+              <i class="fa-solid fa-thumbs-up"></i>
+              <i class="fa-solid fa-bookmark"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

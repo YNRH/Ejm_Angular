@@ -1,0 +1,9 @@
+<div class="img-container">
+  <div class="img-area" *ngFor="let image of images" style="--i:1;">
+    <img class="imagen" [src]="image.url" alt="Image" />
+    <div class="img-text">
+      <h6 class="card-title">{{ image.title }}</h6>
+      <p class="card-text">{{ image.description }}</p>
+    </div>
+  </div>
+</div>
