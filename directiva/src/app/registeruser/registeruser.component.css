@@ -1,0 +1,92 @@
+.register {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .register h2 {
+    height: 70px;
+    background-color: rgba(137, 43, 226, 0.795);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para un botón */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    background-color: rgba(137, 43, 226, 0.795); 
+    color: #fff; 
+    transition: background-color 0.3s, color 0.3s; 
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .btn:hover {
+    background-color: #390577ad; 
+  }
+  
+  /* Estilos para un text-danger */
+  .text-danger{
+    font-size: 12px; 
+  }
+
+  /* Estilos para un elemento <input> */
+input, .form-control:focus {
+    outline: none;
+    padding: 10px; 
+    font-size: 16px; 
+    border-bottom: 2px solid rgba(137, 43, 226, 0.795); 
+    border-radius: 5px; 
+    background-color: rgba(137, 43, 226, 0.121); 
+    color: rgba(49, 8, 87, 0.796); 
+    box-shadow: 0 0 5px rgba(4, 11, 19, 0); 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+  }
+  
+  /* Estilos para el estado :hover (al pasar el mouse sobre el elemento <input>) */
+  input:hover {
+    border-bottom: 2px solid rgba(110, 20, 194, 0.795); 
+    background-color: rgba(137, 43, 226, 0.251); 
+    
+  }
+  label{
+    color: rgba(53, 6, 100, 0.93);
+  }
+  
+  /* Estilos para checkbox */
+  .custom-checkbox {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    
+  }
+  
+  .custom-checkbox-input {
+    margin-right: 10px; 
+    appearance: none; 
+  }
+  
+ a{
+    color: rgba(53, 6, 100, 0.519);
+ }
+
+ .icons{
+    margin-top: 20px;
+ }
+
+ /* Estilos para el contenedor "icons" */
+.icons {
+    display: flex;
+    gap: 10px; /* Espacio entre los iconos */
+  }

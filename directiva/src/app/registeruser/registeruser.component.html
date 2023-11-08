@@ -1,0 +1,54 @@
+
+<div class="register">
+  <h2>Registro de Usuarios</h2>
+  <form [formGroup]="miFormulario" class="container">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre" class="form-control" required />
+      <div *ngIf="miFormulario.get('nombre')?.hasError('required') && miFormulario.get('nombre')?.touched" class="text-danger">
+        Nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" class="form-control" required />
+      <div *ngIf="miFormulario.get('email')?.hasError('required') && miFormulario.get('email')?.touched" class="text-danger">
+        Email es requerido
+      </div>
+      <div *ngIf="miFormulario.get('email')?.hasError('email') && miFormulario.get('email')?.touched" class="text-danger">
+        Email no es válido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" required />
+      <div *ngIf="miFormulario.get('password')?.hasError('required') && miFormulario.get('password')?.touched" class="text-danger">
+        Contraseña es requerida
+      </div>
+      <div *ngIf="miFormulario.get('password')?.hasError('minlength') && miFormulario.get('password')?.touched" class="text-danger">
+        La contraseña debe tener al menos 8 caracteres
+      </div>
+      <div *ngIf="miFormulario.get('password')?.hasError('pattern') && miFormulario.get('password')?.touched" class="text-danger">
+        La contraseña debe contener al menos una mayúscula, una minúscula y un número
+      </div>
+    </div>
+
+    <div class="custom-checkbox">
+      <input type="checkbox" id="checkbox" name="checkbox" class="custom-checkbox-input">
+      <label for="checkbox" class="custom-checkbox-label">
+        Aceptas los términos y condiciones.
+      </label>
+    </div>    
+
+    <button type="submit" [disabled]="miFormulario.invalid" (click)="onSubmit()" class="btn">
+      Registrarse
+    </button><br>
+    <a href="#">¿Ya tienes una cuenta?</a>
+    <div class="icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fas fa-envelope"></i>
+    </div>
+  </form>
+</div>
