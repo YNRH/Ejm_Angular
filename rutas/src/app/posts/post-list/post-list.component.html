@@ -1,0 +1,17 @@
+
+<!-- post-list.component.html -->
+<h2>Listado de Publicaciones</h2>
+<ul>
+  <li *ngFor="let post of posts">
+    <a [routerLink]="['/posts', post.id]">
+      <div class="post-item">
+        <h5>{{ post.title }}</h5>
+        <div class="post-details">
+          <span class="icon fa-solid fa-thumbs-up"></span> <!-- Icono de corazón -->
+          <span class="icon fa-solid fa-comments"></span> <!-- Icono de comentario -->
+          <span class="post-date">{{ post.date }}</span> <!-- Fecha de la publicación -->
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

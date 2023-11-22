@@ -1,0 +1,30 @@
+h2 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    border-left: #a45a00 solid 5px;
+    padding-left: 10px;
+  }
+
+/* Estilos para el contenedor de detalles del usuario */
+div {
+    max-width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #e6e6e6; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  /* Estilos para los detalles del usuario */
+  p {
+    font-size: 16px; 
+    line-height: 1.6; 
+    color: #555; 
+  }
+  
+  /* Estilos para las etiquetas de detalles */
+  strong {
+    font-weight: bold; 
+    color: #a45a00; 
+  }
+  

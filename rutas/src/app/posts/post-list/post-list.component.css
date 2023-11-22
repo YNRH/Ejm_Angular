@@ -1,0 +1,44 @@
+/* Estilos para la lista de publicaciones */
+.post-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a45a00;
+    padding-bottom: 10px;
+  }
+  
+  /* Estilos para los íconos */
+  .icon {
+    font-size: 20px; /* Tamaño de los íconos */
+    margin: 4px 10px; 
+    vertical-align: middle; /* Alinear verticalmente con el texto */
+  }
+  
+  .fa-thumbs-up {
+    color: rgb(73, 144, 172); /* Color del ícono de corazón */
+  }
+  
+  .fa-comments {
+    color: #439261; /* Color del ícono de comentario */
+  }
+  
+  /* Estilos para la fecha de la publicación */
+  .post-date {
+    font-style: italic;
+    color: #777; 
+    margin: 4px 10px; 
+  }
+  
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+    color: #333;
+  }
+
+  h2 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    border-left: #a45a00 solid 5px;
+    padding-left: 10px;
+  }

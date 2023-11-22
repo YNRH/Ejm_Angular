@@ -1,0 +1,33 @@
+/* Estilos para la lista de usuarios */
+h2 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    border-left: #a45a00 solid 5px;
+    padding-left: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0; 
+  }
+  
+  li {
+    margin-bottom: 8px; 
+  }
+  
+  /* Estilos para los enlaces */
+  a {
+    display: inline-block; /* Mostrar los enlaces como bloques en línea */
+    padding: 6px 12px; /* Espaciado interno de los enlaces */
+    background-color: #555; /* Color de fondo del enlace */
+    color: #fff; /* Color del texto del enlace */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s; 
+    margin-left: 10px;
+  }
+  
+  a:hover {
+    background-color: #a45a00; 
+  }
+  
