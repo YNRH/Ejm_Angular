@@ -1,0 +1,43 @@
+.form-control{
+    position: relative;
+    margin: 20px 0 40px;
+    width: 90%;
+    background-color: #03030394;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+}
+.form-control input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 3px solid #ffffff94;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #ffffff94;
+    transition: width 0.2s ease-in-out;
+    width: 90%;
+}
+.form-control input:hover,
+.form-control input:focus{
+    outline: none;
+}
+
+
+
+button{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff4b;
+    position: absolute;
+    left: 86%;
+    top: 20px;
+}
+button:hover{
+    background-color: #ffffff94;
+}
+
+
+

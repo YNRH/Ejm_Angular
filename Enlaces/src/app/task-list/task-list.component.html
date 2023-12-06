@@ -1,0 +1,32 @@
+<!-- task-list.component.html -->
+
+<div class="col">
+  <div class="row">
+    <h4>Tareas incompletas</h4>
+    <ul>
+      <li *ngFor="let task of tasks; let i = index">
+        <input type="checkbox" [checked]="false" (change)="toggleTaskCompletion(i)">
+        <div class="tarea">
+          <label>{{ task.name }} </label><br>
+          <span><svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>  {{ task.createdDate | date: 'dd MMM, HH:mm' }}</span>
+          <button (click)="deleteTask(i)" class="btn-delete"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg></button>
+        </div><br>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="row completadas">
+    <h4>Tareas completadas</h4>
+    <button (click)="clearCompletedTasks()" class="btn-clear"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path d="M566.6 54.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192-34.7-34.7c-4.2-4.2-10-6.6-16-6.6c-12.5 0-22.6 10.1-22.6 22.6v29.1L364.3 320h29.1c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16l-34.7-34.7 192-192zM341.1 353.4L222.6 234.9c-42.7-3.7-85.2 11.7-115.8 42.3l-8 8C76.5 307.5 64 337.7 64 369.2c0 6.8 7.1 11.2 13.2 8.2l51.1-25.5c5-2.5 9.5 4.1 5.4 7.9L7.3 473.4C2.7 477.6 0 483.6 0 489.9C0 502.1 9.9 512 22.1 512l173.3 0c38.8 0 75.9-15.4 103.4-42.8c30.6-30.6 45.9-73.1 42.3-115.8z"/></svg></button>
+    <ul>
+      <li *ngFor="let task of completedTasks; let i = index">
+        <input type="checkbox" [checked]="true" (change)="toggleTaskCompletion(i, true)">
+        <div class="tarea">
+          <label>{{ task.name }} </label><br>
+          <span><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>  {{ task.completedDate | date: 'dd MMM, HH:mm' }}</span>
+        </div><br>
+      </li>
+    </ul>
+  </div>
+</div>
+

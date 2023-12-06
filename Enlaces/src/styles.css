@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    margin: 0;
+    background-image: url('assets/image/nature.png');
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+    background-attachment: fixed;
+}
