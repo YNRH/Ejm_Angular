@@ -1,0 +1,68 @@
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Estilos para el encabezado */
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Estilos para el formulario */
+  form {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenedor de información de archivos */
+  #file-info {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los detalles de archivos */
+  #file-info div {
+    box-shadow: 0 0 10px 2px #ff990065;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  /* Estilos para las líneas divisorias */
+  hr {
+    border: 0;
+    height: 1px;
+    background:  #ff9900ad;
+    margin: 10px 0;
+  }
+
+  
+  /*     ARCHIVO FILE         */
+input[type="file"]{
+  display: none;
+}
+input[type="file"]:active{
+  scale: (0.9);
+}
+label{
+  display: inline-block;
+  text-transform: uppercase;
+  color: #eaff00;
+  background: #ff9900;
+  text-align: center;
+  padding: 15px 40px;
+  font-size:  18px;
+  letter-spacing: 1.5px;
+  user-select: 5px 15px 25px rgba(0,0,0,0.35);
+  border-radius: 5px;
+}
+label i{
+  font-size: 20px;
+  margin-right: 10px;
+}
+label:active{
+  transform: scale(0.9);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carga de archivos</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/1daf3aa6c6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Carga de archivos</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input
+        type="file"
+        name="files"
+        multiple
+        id="archivo"
+        onchange="uploadFiles(event)"
+      />
+      <label for="archivo"><i class="fa-solid fa-upload"></i>Upload File</label>
+    </form>
+    <br />
+    <hr />
+    <br />
+
+    <div id="file-info">
+      <!-- Aquí se mostrarán los detalles de los archivos -->
+    </div>
+    <div class="alert alert-danger" role="alert" id="fileTypeError" style="display: none;">
+      Tipo de archivo no admitido.
+    </div>
+    
+    <div class="alert alert-danger" role="alert" id="fileSizeError" style="display: none;">
+      Tamaño de archivo superado (máximo 5MB).
+    </div>
+
+    <script>
+      const form = document.getElementById("uploadForm");
+      const fileInfoDiv = document.getElementById("file-info");
+      const alertMessageDiv = document.getElementById('alertMessage');
+
+      async function uploadFiles(event) {
+        const formData = new FormData(form);
+        const response = await fetch("/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const filesInfo = await response.json(); // Se espera un array de objetos con información de los archivos
+          fileInfoDiv.innerHTML = ""; // Limpiar el contenedor
+
+          filesInfo.forEach((fileInfo) => {
+            const fileDetails = `
+            <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+              <p style="font-weight: bold;">Nombre: ${fileInfo.filename}</p>
+              <p>Nombre original: ${fileInfo.originalname}</p>
+              <p>Tamaño: ${fileInfo.size} bytes</p>
+              <p>Tipo MIME: ${fileInfo.mimetype}</p>
+            </div>
+          `;
+            fileInfoDiv.innerHTML += fileDetails; // Agregar detalles del archivo al contenedor
+          });
+        } else {
+          const errorMessage = await response.text();
+          if (errorMessage === 'Tipo de archivo no admitido') {
+            document.getElementById('fileTypeError').style.display = 'block';
+          } else if (errorMessage === 'Tamaño de archivo superado (máximo 5MB).') {
+            document.getElementById('fileSizeError').style.display = 'block';
+          } else {
+            // Si hay algún otro error no especificado
+            alert(errorMessage);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
