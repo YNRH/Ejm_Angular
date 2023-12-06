@@ -1,0 +1,130 @@
+<div class="container mt-4">
+  <h2>Música</h2>
+
+  <!-- Formulario para crear/editar una canción -->
+  <form
+    (ngSubmit)="
+      currentSong._id
+        ? updateMusic(currentSong._id, currentSong)
+        : createMusic(currentSong)
+    "
+    enctype="multipart/form-data"
+    novalidate
+  >
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="currentSong.title"
+        name="title"
+        required
+        #title="ngModel"
+      />
+      <div
+        *ngIf="title.invalid && (title.dirty || title.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="title.errors?.['required']">El título es requerido.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="artist">Artista:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="currentSong.artist"
+        name="artist"
+        required
+        #artist="ngModel"
+      />
+      <div
+        *ngIf="artist.invalid && (artist.dirty || artist.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="artist.errors?.['required']">El artista es requerido.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Género:</label>
+      <select
+        class="form-control"
+        [(ngModel)]="currentSong.genre"
+        name="genre"
+        required
+        #genre="ngModel"
+      >
+        <option value="" disabled selected>Selecciona un género</option>
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Hip Hop">Hip Hop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Other">Other</option>
+      </select>
+      <div
+        *ngIf="genre.invalid && (genre.dirty || genre.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="genre.errors?.['required']">El género es requerido.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="audio">Audio:</label>
+      <div class="custom-file">
+        <input
+          type="file"
+          class="custom-file-input"
+          (change)="cargarArchivo($event)"
+          id="audio"
+          name="audio"
+          required
+        />
+        <div class="invalid-feedback text-danger">
+          Por favor, selecciona un archivo de audio.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{ currentSong._id ? "Actualizar" : "Agregar" }}
+    </button>
+  </form>
+
+  <hr />
+
+  <!-- Lista de canciones -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Artista</th>
+        <th>Género</th>
+        <th class="repro">Audio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of musicList">
+        <td>{{ song.title }}</td>
+        <td>{{ song.artist }}</td>
+        <td>{{ song.genre }}</td>
+        <td>
+          <audio controls *ngIf="song.audioPath">
+            <source [src]="song.audioPath" type="audio/mpeg" />
+          </audio>
+        </td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="editMusic(song._id)">
+            Editar
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="confirmDeleteMusic(song._id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

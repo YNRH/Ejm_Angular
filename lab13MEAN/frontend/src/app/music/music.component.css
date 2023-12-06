@@ -1,0 +1,108 @@
+
+  
+  /* Estilos para el título */
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: #19e6a56d solid 4px;
+    color: #faf4f4;
+  }
+  
+  button[type="submit"] {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #19e6a56d;
+    color: #faf4f4;;
+    border: none;
+  }
+
+  button[type="submit"]:hover {
+    color: #000000a3;
+    box-shadow: inset 0 0 10px #19e6a5;
+  }
+
+  label{
+    margin-top: 15px;
+    color: #faf4f4;
+  }
+  input,select{
+    outline: none;
+    border: none;
+    background-color: #19e6a546;
+    border-bottom: #11111146 solid 2px;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    background-color: #19e6a56d;
+    color: #faf4f4;
+  }
+
+  select:focus{
+    color: #00000095;
+  }
+/* Estilos para el reproductor de audio personalizado */
+audio {
+    border: 1px solid #faf4f4;
+    border-radius: 50px;
+    height: 40px;
+    width: 80%;
+    opacity: 0.4;
+  }
+  audio:hover{
+    opacity: 0.6;
+  }
+  
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-pause-button {
+    background-color: #19e6a56d;
+    border-radius: 50%;
+  }
+  /* Agregar sombra a los botones cuando el cursor pasa por encima */
+  audio::-webkit-media-controls-play-button:hover,
+  audio::-webkit-media-controls-pause-button:hover,
+  audio::-webkit-media-controls-mute-button:hover {
+    background-color: #19e6a56d;
+  }
+  
+  /* Estilos para los controles del reproductor */
+  audio::-webkit-media-controls {
+    background-color: #292929a6;
+    border-radius: 50px;
+    padding: 1px;
+  }
+  
+  audio::-webkit-media-controls-volume-slider {
+    width: 50px;
+  }
+  
+  audio::-webkit-media-controls-mute-button {
+    background-color: #19e6a56d;
+    border-radius: 50%;
+  }
+
+  /*                 ++++             */
+
+  
+
+  thead{
+    border-bottom: #1ad39851 solid 6px;
+  }
+  td{
+    background-color: #ffffff9c;
+  }
+
+  .btn-primary{
+    background-color: rgba(18, 96, 197, 0.564);
+    border: none;
+  }
+  .btn-danger{
+    background-color: rgba(197, 18, 18, 0.564);
+    border: none;
+  }
+
+  .repro{
+    width: 200px;
+  }
