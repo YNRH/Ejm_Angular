@@ -1,0 +1,43 @@
+//- views/registrations/index.pug
+
+extend ../layout
+
+block content 
+  main
+  h1 Registrar nueva matricula
+  form(action="", method="post")
+      label(for="name") Nombre de estudiante:
+      input(type="text", id="name", name="name")
+
+      label(for="age") Edad:
+      input(type="number", id="age", name="age")
+
+      label(for="email") Email:
+      input(type="email", id="email", name="email")
+
+      label(for="curso") Curso a inscribirse:
+      select(id="curso", name="curso")
+        each course in courses
+          option(value=course.id) #{course.name}
+
+      input(type="submit", value="Registrar")
+
+h1 Listado de matriculas 
+  table.table-style
+    thead
+      tr
+        th ID
+        th Nombre del Estudiante
+        th Correo Electrónico
+        th Nombre del Curso
+        th Opciones
+    tbody
+      each registration in registrations
+        tr
+          td= registration.registrations_id
+          td= registration.student_name
+          td= registration.email
+          td= registration.course_name
+          td
+            button.edit-btn(class="btn btn-edit", data-id=registration.registrations_id) Editar
+            button.delete-btn(class="btn btn-delete", data-id=registration.registrations_id) Eliminar

@@ -1,0 +1,11 @@
+//- views/students/index.pug
+
+extend ../layout
+
+block content
+  main
+    h1 Lista de Estudiantes
+    ul
+      each student in students
+        li= student.name + ' - ' + student.email
+
