@@ -1,0 +1,16 @@
+<nav>
+    <div class="menu">
+        <div class="logo">
+            <a routerLink="/">lab16JWT</a>
+        </div>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li *ngIf="!auth.loggedIn"><a routerLink="/register">Register</a></li>
+            <li *ngIf="!auth.loggedIn"><a routerLink="/login">Login</a></li>
+            <li *ngIf="auth.loggedIn"><a routerLink="/dashboard">Dashboard</a></li>
+            <li *ngIf="auth.loggedIn">
+              <a (click)="logout()" class="logout">Sign out</a>
+            </li>
+          </ul>
+    </div>
+</nav>

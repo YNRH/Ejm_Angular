@@ -1,0 +1,31 @@
+
+<div class="img"></div>
+<div class="wrapper">
+  <div><h2>Sign Up</h2></div>
+  <div class="formbox-login">
+    <form (ngSubmit)="register()">
+      <div class="input-box">
+        <span class="icon"><i>i</i></span>
+        <input [(ngModel)]="registerData.username" name="username">
+        <label for="">Username</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><i class="fa-solid fa-lock">i</i></span>
+        <input [(ngModel)]="registerData.password" name="password" type="password">
+        <label for="">Password</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><i>i</i></span>
+        <input [(ngModel)]="confirmPassword" name="confirmPassword" type="password">
+        <label for="">Confirm Password</label>
+      </div>
+      <div class="re-for">
+        <label for=""><input type="checkbox" />I agree to the terms & conditions</label>
+      </div>
+      <button type="submit">Submit</button>
+      <div class="login-register">
+        <p>Already have an account ? <a href="">Sign in</a></p>
+      </div>
+    </form>
+  </div>
+</div>
